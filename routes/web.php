@@ -22,3 +22,7 @@ Route::get('/delete/{productid?}', [ProductController::class, 'deleteProduct'])-
 Route::get('/editProduct/{productid?}', [ProductController::class, 'editProduct'])->name('product.edit');
 Route::post('/updateProduct/{productid?}', [ProductController::class, 'updateProduct'])->name('product.update');
 
+
+Route::get('/producttable', [ProductController::class, 'getProductTable'])->name('product.table');
+
+

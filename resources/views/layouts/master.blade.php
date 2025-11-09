@@ -172,9 +172,6 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="" class="order_online">
-                Order Online
-              </a>
             </div>
           </div>
         </nav>

@@ -28,7 +28,7 @@ class KrencelController extends Controller
             $currentCategory = Category::find($catid);
         } else {
             // $products = Product::all(); // select * from products
-            $products = PRoduct::paginate(4);
+            $products = PRoduct::paginate(6);
             $currentCategory = null;
         }
         return view('pages.product', [
