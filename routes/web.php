@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KrencelController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 
 Auth::routes();
 
@@ -26,3 +27,6 @@ Route::post('/updateProduct/{productid?}', [ProductController::class, 'updatePro
 Route::get('/producttable', [ProductController::class, 'getProductTable'])->name('product.table');
 
 
+// Cart, Order, OrderDetails
+Route::get('getPage/cartPage', [KrencelController::class, 'getCart'])->name('product.cart')->middleware('auth');
+Route::get('addProductToCart/{productId}', [CartController::class, 'addProductToCart'])->name('add.cart');

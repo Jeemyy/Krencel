@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Review;
+use App\Models\Cart;
+
 
 
 class KrencelController extends Controller
@@ -35,6 +37,14 @@ class KrencelController extends Controller
             'products' => $products,
             'categories' => $categories,
             'currentCategory' => $currentCategory,
+        ]);
+    }
+
+    public function getCart(){
+        $user = auth()->user()->id;
+        $cart = Cart::with('product')->where('user_id',$user)->get();
+        return view('pages.cart',[
+            'carts' => $cart
         ]);
     }
 }

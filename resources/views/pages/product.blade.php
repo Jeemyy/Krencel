@@ -29,7 +29,7 @@
                 <p>{{ $product->description }}</p>
                 <div class="">
                   <h6>{{ $product->price }}$</h6>
-                    <a type="button" class="btn btn-warning">Buy</a>
+                    <a href="{{route('add.cart',$product->id)}}" type="button" class="btn btn-warning">Buy</a>
                     <a href="{{route('product.delete',$product->id)}}" type="button" class="btn btn-danger">Delete</a>
                     <a href="{{route('product.edit',$product->id)}}" type="button" class="btn btn-primary">Update</a>
                 </div>
