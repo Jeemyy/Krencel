@@ -5,6 +5,7 @@ use App\Http\Controllers\KrencelController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\http\Controllers\OrderController;
 
 Auth::routes();
 
@@ -28,5 +29,7 @@ Route::get('/producttable', [ProductController::class, 'getProductTable'])->name
 
 
 // Cart, Order, OrderDetails
-Route::get('getPage/cartPage', [KrencelController::class, 'getCart'])->name('product.cart')->middleware('auth');
+Route::get('cartPage', [KrencelController::class, 'getCart'])->name('product.cart')->middleware('auth');
 Route::get('addProductToCart/{productId}', [CartController::class, 'addProductToCart'])->name('add.cart');
+Route::get('/CompleteOrder/checkout', [CartController::class, 'checkOutPage'])->name('checkout')->middleware('auth');
+Route::post('/cartPage/addNewOrder', [OrderController::class, 'storeNewOrder'])->name('store.order')->middleware('auth');

@@ -54,7 +54,7 @@
                     }) }}$</td>
                     <td></td>
                     <td></td>
-                    <td><a href="" class="btn btn-primary">CheckOut</a></td>
+                    <td><a href="{{route('checkout')}}" class="btn btn-primary">CheckOut</a></td>
                     <td></td>
                     <td><a href="" class="btn btn-primary">Previous</a></td>
                     <td></td>

@@ -31,4 +31,10 @@ class CartController extends Controller
         return redirect()->route('product.cart');
         // return response()->json(['success' => 'request is successfull do it'], 201);
     }
+
+    public function checkOutPage(){
+        $user = auth()->user()->id;
+        $cart = Cart::with('product')->where('user_id', $user)->get();
+        return view('pages.checkout', ['carts' => $cart]);
+    }
 }
